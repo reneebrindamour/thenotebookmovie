@@ -592,6 +592,7 @@ main {
     }
 }
 /* End of Home Page */
+
 /* Start of Cast Page */
 .main {
     text-align: center;
@@ -809,6 +810,365 @@ main {
 }
 
 /* End of Synopsis Page */
+
+/* Start of Awards Page */
+.awardsintroductioncontainer {
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.header__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-size: 70px; 
+}
+
+.header__paragraph {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.awards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.awards__block {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.2s;
+    animation: fadeIn 0.5s ease-in-out; 
+    flex-basis: 100%;
+}
+
+.awards__block:hover {
+    transform: scale(1.02);
+}
+
+.awards__block--left {
+    flex-direction: row; 
+    text-align: left;
+    border-bottom: #283c46 solid 2px;
+    padding: 50px 50px;
+}
+
+.awards__block--right {
+    flex-direction: row-reverse; 
+    text-align: left;
+    border-bottom: #283c46 solid 2px;
+    padding: 50px 50px;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.awards__block--left {
+    animation: slideInLeft 2s ease forwards;
+}
+
+.awards__block--right {
+    animation: slideInRight 2s ease forwards;
+}
+
+.awards__block--left:nth-child(odd),
+.awards__block--right:nth-child(odd) {
+    animation-delay: 0.1s; 
+}
+
+.awards__block--left:nth-child(even),
+.awards__block--right:nth-child(even) {
+    animation-delay: 0.2s; 
+}
+
+.awards__image {
+    flex: 1;
+    text-align: center;
+    margin: 0 15px;
+    padding: 0px 25px;
+}
+
+.awards__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.awards__details {
+    flex: 2;
+}
+
+.awards__details__description {
+    margin: 0px;
+}
+
+.awards__title {
+    color: #6f8da2;
+    margin: 10px 0;
+    color: #283c46;
+}
+
+.awards__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.awards__list-item {
+    margin: 5px 0;
+    font-family: adobe-garamond-pro, serif;
+    font-weight: 400;
+    font-size: 26px; 
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .awards__block {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .awards {
+        align-items: center;
+    }
+
+    .awards__block {
+        flex-direction: column;
+        align-items: center;
+        width: 70%; 
+        text-align: center;
+        margin: 0 auto; 
+    }
+
+    .awards__image {
+        margin-bottom: 20px; 
+    }
+
+    .header__title {
+        font-size: 50px;
+    }
+
+    .awards-title {
+        font-size: 35px;
+    }
+
+    .awards__details__description {
+        font-size: 30px;
+    }
+
+    .awards__image {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .awards__block {
+        width: 100%;
+        padding: 10px;
+        transform: scale(0.9); 
+    }
+
+    .awards__image {
+        margin-bottom: 20px;
+    }
+
+    .awards {
+        margin: 35px;
+    }
+
+    .awards__block--right {
+        text-align: center;
+        margin: 0;
+    }
+
+    .awards__block--left {
+        text-align: center;
+        margin: 0;
+    }
+
+    .header__title {
+        font-size: 40px;
+    }
+
+    .awards-title {
+        font-size: 26px;
+    }
+
+    .awards__details__description {
+        font-size: 24px;
+    }
+
+    .header__paragraph {
+        font-size: 24px;
+    }
+    
+
+}
+
+@media (max-width: 355px){
+    .awards__block {
+        width: 100%;
+        padding: 5px;
+        transform: scale(0.8); 
+    }
+    
+
+    .awards__image {
+        margin-bottom: 15px;
+    }
+
+    .header__title {
+        font-size: 30px;
+    }
+
+    .awards-title {
+        font-size: 18px;
+    }
+
+    .awards__details__description {
+        font-size: 18px;
+
+    .header__paragraph {
+        font-size: 18px;
+    }
+
+}
+}
+/* Gallery Section */
+.gallery {
+    padding: 20px;
+    margin: 40px;
+    text-align: center;
+    opacity: 0; 
+    transform: translateY(50px);
+    animation: flyIn 1.5s forwards; 
+}
+
+@keyframes flyIn {
+    to {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.gallery__title {
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-size: 55px;
+    margin: 20px 0px;
+}
+
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery__row {
+    display: flex;
+    justify-content: center;
+    opacity: 0; 
+}
+
+.gallery__row--top {
+    transform: translateX(100px); 
+    animation: flyInRight 0.6s forwards; 
+}
+
+@keyframes flyInRight {
+    to {
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+.gallery__row--bottom {
+    transform: translateX(-100px); 
+    animation: flyInLeft 0.6s forwards; 
+}
+
+@keyframes flyInLeft {
+    to {
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+.gallery__item--landscape {
+    height: 250px;
+    object-fit: cover;
+    width:100%;
+    border-radius: 5px;
+}
+
+.gallery__item {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1200px){
+    .header {
+        margin: 0px 25px;
+    }
+
+}
+
+/* Media Query for tablets (768px) */
+@media (max-width: 768px) {
+    .gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .gallery__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .awards-title {
+        margin: 0 auto;
+    }
+}
+
+/* Media Query for mobile (320px) */
+@media (max-width: 320px) {
+    .gallery__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .awards-title {
+        margin: 0 auto;
+        font-size: 24px;
+    }
+
+    .gallery__title {
+        font-size: 30px;
+    }
+    }
 /* Footer Section */
 .footer {
     background-color: #6f8da2;
